@@ -2,24 +2,24 @@
 class Gomodrun < Formula
   desc "The forgotten go tool that executes and caches binaries"
   homepage "https://github.com/dustinblackman/gomodrun"
-  version "0.4.0"
+  version "0.4.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.0/gomodrun_0.4.0_darwin_amd64.tar.gz"
-    sha256 "67a1113ff7be78b89e680fd47800954a247d9ce208d5c1ae3b4856feb958daa1"
+    url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.1/gomodrun_0.4.1_darwin_amd64.tar.gz"
+    sha256 "5cbea0a6d74f630e9c5c5cacca7f0fe311c945617e47d4102923f3de22296813"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.0/gomodrun_0.4.0_linux_amd64.tar.gz"
-      sha256 "efb1c74fd93635362ef70cffb0522d3b56c94cddf4e419ab3d8bc19691c1ef10"
+      url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.1/gomodrun_0.4.1_linux_amd64.tar.gz"
+      sha256 "d12f361dd6e18ebb46fc94613b1e0d38161bad3e652f53bef9161feac44ff89a"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.0/gomodrun_0.4.0_linux_arm64.tar.gz"
-        sha256 "af9baf7eee8e99f0bdbfce24b457b48ac41e72b405007ae5e3ec8a51608c7e1c"
+        url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.1/gomodrun_0.4.1_linux_arm64.tar.gz"
+        sha256 "df2dbc141d2564809b36dcc587a2cdd56641043666a034936f13dca19c245f76"
       else
-        url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.0/gomodrun_0.4.0_linux_armv6.tar.gz"
-        sha256 "5e7ed0626f4ba656fbec814d8e284c54b7766754281d680d808a630f7739c521"
+        url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.1/gomodrun_0.4.1_linux_armv6.tar.gz"
+        sha256 "c5fea7b0874374db53afec8d64a689f275a30196623314903898b1391147ad31"
       end
     end
   end
