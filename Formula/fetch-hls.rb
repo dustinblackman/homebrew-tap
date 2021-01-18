@@ -5,24 +5,24 @@
 class FetchHls < Formula
   desc "A quick and lazy solution to proxy HLS streams to external players (Chromecast, VLC)."
   homepage "https://github.com/dustinblackman/fetch-hls"
-  version "0.1.2"
+  version "0.1.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/dustinblackman/fetch-hls/releases/download/v0.1.2/fetch-hls_0.1.2_darwin_amd64.tar.gz"
-    sha256 "f822224fc3daee2c6b0d90528a577e9134e8beab59f4452dd604d2d3e49483ca"
+    url "https://github.com/dustinblackman/fetch-hls/releases/download/v0.1.3/fetch-hls_0.1.3_darwin_amd64.tar.gz"
+    sha256 "d91e0ef2f4085e3e2fd512be86e66d2b0c3490e3e349b4f93d37bba528f8b8f0"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/dustinblackman/fetch-hls/releases/download/v0.1.2/fetch-hls_0.1.2_linux_amd64.tar.gz"
-    sha256 "93111e6ca4c1734c66bd144230a74ac0608ba8f087ea4ba658c0fefd5e641aea"
+    url "https://github.com/dustinblackman/fetch-hls/releases/download/v0.1.3/fetch-hls_0.1.3_linux_amd64.tar.gz"
+    sha256 "89c24669a5048ef80eb0d89a67db97b89f7f540bebea82498d874d1b345ad72c"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/dustinblackman/fetch-hls/releases/download/v0.1.2/fetch-hls_0.1.2_linux_armv6.tar.gz"
-    sha256 "a71eedbb584886a7f20379bff086ef3366f52ac35ffe547b40abc8e6db93269c"
+    url "https://github.com/dustinblackman/fetch-hls/releases/download/v0.1.3/fetch-hls_0.1.3_linux_armv6.tar.gz"
+    sha256 "55fb873ca3c5472d7843719618674fea4890b1423ee94b9b33640f0dbc7808e6"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/dustinblackman/fetch-hls/releases/download/v0.1.2/fetch-hls_0.1.2_linux_arm64.tar.gz"
-    sha256 "93e484aca66ea5b5c622ec733932c0f1b348840d16794a04eb9029eb161dcfb4"
+    url "https://github.com/dustinblackman/fetch-hls/releases/download/v0.1.3/fetch-hls_0.1.3_linux_arm64.tar.gz"
+    sha256 "7da21da895b88f24d647fcd7f50c26c0234f75cf0912a9d2b9be226df0ab586e"
   end
 
   def install
