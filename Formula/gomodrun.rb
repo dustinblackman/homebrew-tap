@@ -5,28 +5,52 @@
 class Gomodrun < Formula
   desc "The forgotten go tool that executes and caches binaries"
   homepage "https://github.com/dustinblackman/gomodrun"
-  version "0.4.4"
-  bottle :unneeded
+  version "0.4.5"
 
-  if OS.mac?
-    url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.4/gomodrun_0.4.4_darwin_amd64.tar.gz"
-    sha256 "2cfd16dd4cc7530559c224218aafd560baf52a8c1988f15279349ce3028633e5"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.4/gomodrun_0.4.4_linux_amd64.tar.gz"
-    sha256 "46d116f70fa8e1cdc2d3c957771cbf3e28a8e99993ac3587b26f82facd151b83"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.4/gomodrun_0.4.4_linux_armv6.tar.gz"
-    sha256 "176fd44c667ae4545fff6c4572cda14062a0b14837a689c04d95eeffe5f2cd48"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.4/gomodrun_0.4.4_linux_arm64.tar.gz"
-    sha256 "a9acd5855e6efc02f98d3f306bc70c45ad9e5777fcedab4e0a61f1190c713634"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.5/gomodrun_0.4.5_darwin_amd64.tar.gz"
+      sha256 "540b9e3eef2fc3ae3033611ae68881fbe23aeb0e9851d3bd295273b2cd7bb591"
+
+      def install
+        bin.install "gomodrun"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.5/gomodrun_0.4.5_darwin_arm64.tar.gz"
+      sha256 "463a8bd4ee66e27b093700e957a23730559311fe20d1700414192e74da59190c"
+
+      def install
+        bin.install "gomodrun"
+      end
+    end
   end
 
-  def install
-    bin.install "gomodrun"
+  on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.5/gomodrun_0.4.5_linux_armv6.tar.gz"
+      sha256 "4739c557d924a5c027e9dc431f4c8c707ec04847982fa09828170c4a44eb743d"
+
+      def install
+        bin.install "gomodrun"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.5/gomodrun_0.4.5_linux_amd64.tar.gz"
+      sha256 "566b7a0faeaf90170540b213e49a76b71e92945d86332c90dacd43957b9b7982"
+
+      def install
+        bin.install "gomodrun"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/dustinblackman/gomodrun/releases/download/v0.4.5/gomodrun_0.4.5_linux_arm64.tar.gz"
+      sha256 "71dc256b26fd4e851512c99eeccae31249e8cb8f2079be9d9fc16e0359a550df"
+
+      def install
+        bin.install "gomodrun"
+      end
+    end
   end
 
   test do
