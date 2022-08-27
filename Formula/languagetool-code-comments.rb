@@ -5,11 +5,11 @@
 class LanguagetoolCodeComments < Formula
   desc "Integrates the LanguageTool API to parse, spell check, and correct the grammar of your code comments!"
   homepage "https://github.com/dustinblackman/languagetool-code-comments"
-  version "0.1.3"
+  version "0.2.0"
 
   on_macos do
-    url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.1.3/languagetool-code-comments_0.1.3_darwin_amd64.tar.gz"
-    sha256 "ccedefd35831c06db0b7da91b4dd96cf7805a3d83f9befdc8deb19f27162f329"
+    url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.2.0/languagetool-code-comments_0.2.0_darwin_amd64.tar.gz"
+    sha256 "a26f7cb8dc383f94c53ffc126e1ebbcd07829d1c31eb2eea2732a1942374bad3"
 
     def install
       # Install languagetool-code-comments
@@ -39,8 +39,8 @@ class LanguagetoolCodeComments < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.1.3/languagetool-code-comments_0.1.3_linux_amd64.tar.gz"
-      sha256 "f1a4627f0dc4ce737743207c137a43ad888c92706d03160c162a15ca93021548"
+      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.2.0/languagetool-code-comments_0.2.0_linux_amd64.tar.gz"
+      sha256 "88d94411112fecedef2a84f3be0ffc37f73641cdc49e1f0718271c698cb27560"
 
       def install
         # Install languagetool-code-comments
@@ -58,8 +58,8 @@ class LanguagetoolCodeComments < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.1.3/languagetool-code-comments_0.1.3_linux_arm64.tar.gz"
-      sha256 "39361199f285fa4dc21623ec8b6e1bf3fed8ccaa5d322b17a04f86bf66a79f80"
+      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.2.0/languagetool-code-comments_0.2.0_linux_arm64.tar.gz"
+      sha256 "963c39d6240757eecbcc5f23e1446148de91d0109132ab1f5b32cb9aabd6672c"
 
       def install
         # Install languagetool-code-comments
