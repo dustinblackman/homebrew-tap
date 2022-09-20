@@ -5,11 +5,11 @@
 class CfAlias < Formula
   desc "Create Cloudflare email alias' directly from your terminal or Alfred."
   homepage "https://github.com/dustinblackman/cf-alias"
-  version "0.1.4"
+  version "0.1.5"
 
   on_macos do
-    url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.4/cf-alias_0.1.4_darwin_amd64.tar.gz"
-    sha256 "5f347c56c3bf23f116df031138d29c4e945cce583de5cb47c7e9f12fea7225f9"
+    url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.5/cf-alias_0.1.5_darwin_amd64.tar.gz"
+    sha256 "9136436d75e2b15a9c05e86468401fdac7296d4b150a81ca3e6606c3cb44e169"
 
     def install
       # Install cf-alias
@@ -39,8 +39,8 @@ class CfAlias < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.4/cf-alias_0.1.4_linux_amd64.tar.gz"
-      sha256 "d21f9aa2b99cb99f23c34f8138a43fb73e2a6331c6859dde84c9f91d22fb1f77"
+      url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.5/cf-alias_0.1.5_linux_amd64.tar.gz"
+      sha256 "7637e0ebf78c5196a2d724267fd12a8d8ac1f3513b952036ce3819017dc52b3b"
 
       def install
         # Install cf-alias
