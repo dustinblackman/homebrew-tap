@@ -5,12 +5,12 @@
 class LanguagetoolCodeComments < Formula
   desc "Integrates the LanguageTool API to parse, spell check, and correct the grammar of your code comments!"
   homepage "https://github.com/dustinblackman/languagetool-code-comments"
-  version "0.4.2"
+  version "0.4.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.4.2/languagetool-code-comments_0.4.2_darwin_arm64.tar.gz"
-      sha256 "6f31dbb9c1efea06e2d09a337d16a7aa5fca761ab3acd2538d1b76de7c850acb"
+      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.4.3/languagetool-code-comments_0.4.3_darwin_arm64.tar.gz"
+      sha256 "2bc119d0d8cdaf20bbc0afe58f0d0f02f110a58ad7901a68b9ede292a281b3d9"
 
       def install
         # Install languagetool-code-comments
@@ -28,8 +28,8 @@ class LanguagetoolCodeComments < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.4.2/languagetool-code-comments_0.4.2_darwin_amd64.tar.gz"
-      sha256 "e17c71ef1828d2c474abe5c190540d86ebcbe178f551153123a5f1e93f573eed"
+      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.4.3/languagetool-code-comments_0.4.3_darwin_amd64.tar.gz"
+      sha256 "75490d612c277907f934ae1daafa690df7349e82754a7c8b9d1a5c8e9b7c979b"
 
       def install
         # Install languagetool-code-comments
@@ -49,9 +49,9 @@ class LanguagetoolCodeComments < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.4.2/languagetool-code-comments_0.4.2_linux_amd64.tar.gz"
-      sha256 "5569047d7faf7461fe79bca8328960bb221a9d5e3ebd489d846b982fec9de5a3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.4.3/languagetool-code-comments_0.4.3_linux_arm64.tar.gz"
+      sha256 "a092d6f4a50c3d76cbf60bc074a8c2ec5c2793043725567eadf0dea05914b0cd"
 
       def install
         # Install languagetool-code-comments
@@ -68,9 +68,9 @@ class LanguagetoolCodeComments < Formula
         (fish_completion/"languagetool-code-comments.fish").write output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.4.2/languagetool-code-comments_0.4.2_linux_arm64.tar.gz"
-      sha256 "2c5113e0bc7d33da833682d867ec25e95d753ab9bcb07a2be107b994c24a6478"
+    if Hardware::CPU.intel?
+      url "https://github.com/dustinblackman/languagetool-code-comments/releases/download/v0.4.3/languagetool-code-comments_0.4.3_linux_amd64.tar.gz"
+      sha256 "0da6eb30e3546b85adf2c8e5d724ebb000b1e97518d2d7292a6ffa21a48ac596"
 
       def install
         # Install languagetool-code-comments
