@@ -5,42 +5,53 @@
 class CfAlias < Formula
   desc "Create Cloudflare email alias' directly from your terminal or Alfred."
   homepage "https://github.com/dustinblackman/cf-alias"
-  version "0.1.5"
+  version "0.1.9"
 
   on_macos do
-    url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.5/cf-alias_0.1.5_darwin_amd64.tar.gz"
-    sha256 "9136436d75e2b15a9c05e86468401fdac7296d4b150a81ca3e6606c3cb44e169"
-
-    def install
-      # Install cf-alias
-      bin.install "cf-alias"
-
-      # Install shell completions
-      output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "bash")
-      (bash_completion/"cf-alias").write output
-
-      output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "zsh")
-      (zsh_completion/"_cf-alias").write output
-
-      output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "fish")
-      (fish_completion/"cf-alias.fish").write output
-    end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the CfAlias
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.9/cf-alias_0.1.9_darwin_arm64.tar.gz"
+      sha256 "f68541dedf1500bf961be73d281519309b5fbc38cdcec7f7c5febeaa40bb4943"
+
+      def install
+        # Install cf-alias
+        bin.install "cf-alias"
+
+        # Install shell completions
+        output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "bash")
+        (bash_completion/"cf-alias").write output
+
+        output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "zsh")
+        (zsh_completion/"_cf-alias").write output
+
+        output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "fish")
+        (fish_completion/"cf-alias.fish").write output
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.9/cf-alias_0.1.9_darwin_amd64.tar.gz"
+      sha256 "0a567c6827f668e8bbd733644eefdd543d7edea40419fe61532f3c7a05efa36a"
+
+      def install
+        # Install cf-alias
+        bin.install "cf-alias"
+
+        # Install shell completions
+        output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "bash")
+        (bash_completion/"cf-alias").write output
+
+        output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "zsh")
+        (zsh_completion/"_cf-alias").write output
+
+        output = Utils.safe_popen_read("#{bin}/cf-alias", "completion", "-s", "fish")
+        (fish_completion/"cf-alias.fish").write output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.5/cf-alias_0.1.5_linux_amd64.tar.gz"
-      sha256 "7637e0ebf78c5196a2d724267fd12a8d8ac1f3513b952036ce3819017dc52b3b"
+      url "https://github.com/dustinblackman/cf-alias/releases/download/v0.1.9/cf-alias_0.1.9_linux_amd64.tar.gz"
+      sha256 "446f221ccf2265b0e79f13502404e7150e8364a63bbb8e86993ffd373f715970"
 
       def install
         # Install cf-alias
