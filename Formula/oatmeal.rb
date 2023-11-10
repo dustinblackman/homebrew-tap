@@ -5,86 +5,54 @@
 class Oatmeal < Formula
   desc "Terminal UI to chat with large language models (LLM) using backends such as Ollama, and direct integrations with your favourite editor like Neovim!"
   homepage "https://github.com/dustinblackman/oatmeal"
-  version "0.2.2"
+  version "0.2.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.2.2/oatmeal_0.2.2_darwin_arm64.tar.gz"
-      sha256 "0015e2968a6366ee57f70665bad4a93ed39b9eb0afa1fa57b0aa556e9e5be6b9"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.2.3/oatmeal_0.2.3_darwin_arm64.tar.gz"
+      sha256 "4a6d3df5df9f28544b086ee144e97efdc70458884331cc09c61ef1fac67a7c17"
 
       def install
-        # Install oatmeal
         bin.install "oatmeal"
-
-        # Install shell completions
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "bash")
-        (bash_completion/"oatmeal").write output
-
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "zsh")
-        (zsh_completion/"_oatmeal").write output
-
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "fish")
-        (fish_completion/"oatmeal.fish").write output
+        bash_completion.install "completions/oatmeal.bash" => "oatmeal"
+        zsh_completion.install "completions/oatmeal.zsh" => "_oatmeal"
+        fish_completion.install "completions/oatmeal.fish"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.2.2/oatmeal_0.2.2_darwin_amd64.tar.gz"
-      sha256 "a6287271595a575e7b2d5cdd5a24647f10d38b4ff733e863e391f9dc3683ca69"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.2.3/oatmeal_0.2.3_darwin_amd64.tar.gz"
+      sha256 "63e60538d67b03241af217c788380211b87c1459924dd7d8cfdc73bf37be25fd"
 
       def install
-        # Install oatmeal
         bin.install "oatmeal"
-
-        # Install shell completions
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "bash")
-        (bash_completion/"oatmeal").write output
-
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "zsh")
-        (zsh_completion/"_oatmeal").write output
-
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "fish")
-        (fish_completion/"oatmeal.fish").write output
+        bash_completion.install "completions/oatmeal.bash" => "oatmeal"
+        zsh_completion.install "completions/oatmeal.zsh" => "_oatmeal"
+        fish_completion.install "completions/oatmeal.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.2.2/oatmeal_0.2.2_linux_arm64.tar.gz"
-      sha256 "ef28dd38a1bacd16b0225b72eaa00cbf7896f6b7a279517678eb45cd382bade5"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.2.3/oatmeal_0.2.3_linux_arm64.tar.gz"
+      sha256 "1d7541f60f538e7e83f48f063036f946a3010d85707ee4836595ab6e08dd5820"
 
       def install
-        # Install oatmeal
         bin.install "oatmeal"
-
-        # Install shell completions
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "bash")
-        (bash_completion/"oatmeal").write output
-
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "zsh")
-        (zsh_completion/"_oatmeal").write output
-
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "fish")
-        (fish_completion/"oatmeal.fish").write output
+        bash_completion.install "completions/oatmeal.bash" => "oatmeal"
+        zsh_completion.install "completions/oatmeal.zsh" => "_oatmeal"
+        fish_completion.install "completions/oatmeal.fish"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.2.2/oatmeal_0.2.2_linux_amd64.tar.gz"
-      sha256 "f3263351fd639b7a82d6c96ab647af0289ba879634ff4c65f6f3985fea1a10e5"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.2.3/oatmeal_0.2.3_linux_amd64.tar.gz"
+      sha256 "56f7753d8292885ec18d3935ec83d4c7f5590f07296b8720eb5282e69fc37ae7"
 
       def install
-        # Install oatmeal
         bin.install "oatmeal"
-
-        # Install shell completions
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "bash")
-        (bash_completion/"oatmeal").write output
-
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "zsh")
-        (zsh_completion/"_oatmeal").write output
-
-        output = Utils.safe_popen_read("#{bin}/oatmeal", "completions", "-s", "fish")
-        (fish_completion/"oatmeal.fish").write output
+        bash_completion.install "completions/oatmeal.bash" => "oatmeal"
+        zsh_completion.install "completions/oatmeal.zsh" => "_oatmeal"
+        fish_completion.install "completions/oatmeal.fish"
       end
     end
   end
