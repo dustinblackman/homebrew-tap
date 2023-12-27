@@ -5,54 +5,58 @@
 class Oatmeal < Formula
   desc "Terminal UI to chat with large language models (LLM) using backends such as Ollama, and direct integrations with your favourite editor like Neovim!"
   homepage "https://github.com/dustinblackman/oatmeal"
-  version "0.11.0"
+  version "0.12.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.11.0/oatmeal_0.11.0_darwin_arm64.tar.gz"
-      sha256 "b5144463a28f6d11833d875544a0bc191879245dcee1966649209044590420f0"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.0/oatmeal_0.12.0_darwin_arm64.tar.gz"
+      sha256 "9babea3841b65551440bced8dac455402ec510575d50fecfa4d6b0dc0462a347"
 
       def install
         bin.install "oatmeal"
         bash_completion.install "completions/oatmeal.bash" => "oatmeal"
         zsh_completion.install "completions/oatmeal.zsh" => "_oatmeal"
         fish_completion.install "completions/oatmeal.fish"
+        man1.install "manpages/oatmeal.1.gz"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.11.0/oatmeal_0.11.0_darwin_amd64.tar.gz"
-      sha256 "ad24e97ade007b0d85c8c2ccd746051e73d23794b31bac2f3db8607f4d5e86c4"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.0/oatmeal_0.12.0_darwin_amd64.tar.gz"
+      sha256 "444d480a3f4e26c9588368a55949100a5e3a8395b4854c9f94a308c69352b150"
 
       def install
         bin.install "oatmeal"
         bash_completion.install "completions/oatmeal.bash" => "oatmeal"
         zsh_completion.install "completions/oatmeal.zsh" => "_oatmeal"
         fish_completion.install "completions/oatmeal.fish"
+        man1.install "manpages/oatmeal.1.gz"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.11.0/oatmeal_0.11.0_linux_arm64.tar.gz"
-      sha256 "928e4fc4af05686d32de738619691b680ff28c596f0eabf969f6da620e07cd9d"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.0/oatmeal_0.12.0_linux_arm64.tar.gz"
+      sha256 "b766f1680975cc1a668fd69c079de7d4fca4146e05c6ad272bdd3be378258774"
 
       def install
         bin.install "oatmeal"
         bash_completion.install "completions/oatmeal.bash" => "oatmeal"
         zsh_completion.install "completions/oatmeal.zsh" => "_oatmeal"
         fish_completion.install "completions/oatmeal.fish"
+        man1.install "manpages/oatmeal.1.gz"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.11.0/oatmeal_0.11.0_linux_amd64.tar.gz"
-      sha256 "518ebb5e788654aa612034535572d911bfe0a9d539ff82632558d4dcf147fbd6"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.0/oatmeal_0.12.0_linux_amd64.tar.gz"
+      sha256 "e44e85e7a34d4fcd08a3f55d8eb4e50df25059fe2414d5b96f9028a9d7ac2000"
 
       def install
         bin.install "oatmeal"
         bash_completion.install "completions/oatmeal.bash" => "oatmeal"
         zsh_completion.install "completions/oatmeal.zsh" => "_oatmeal"
         fish_completion.install "completions/oatmeal.fish"
+        man1.install "manpages/oatmeal.1.gz"
       end
     end
   end
