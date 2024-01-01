@@ -5,12 +5,12 @@
 class Oatmeal < Formula
   desc "Terminal UI to chat with large language models (LLM) using backends such as Ollama, and direct integrations with your favourite editor like Neovim!"
   homepage "https://github.com/dustinblackman/oatmeal"
-  version "0.12.1"
+  version "0.12.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.1/oatmeal_0.12.1_darwin_arm64.tar.gz"
-      sha256 "591d4eb24b576b44beddef25dcd531ea8af6f75620013b144f7ba2549072ccc2"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.2/oatmeal_0.12.2_darwin_arm64.tar.gz"
+      sha256 "1c1c8e98d1043aeb9ad3501939f026fdb5a29447256e1b9fe1d2637178bbded9"
 
       def install
         bin.install "oatmeal"
@@ -21,8 +21,8 @@ class Oatmeal < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.1/oatmeal_0.12.1_darwin_amd64.tar.gz"
-      sha256 "994456550d52b02f1d13dc0937d96065ef9f29f56d51e920de77833c3bde32ea"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.2/oatmeal_0.12.2_darwin_amd64.tar.gz"
+      sha256 "a981ba28048e730cfd0d6c10aa70b39fe6a795c1caf7d302f7dddb088050782e"
 
       def install
         bin.install "oatmeal"
@@ -36,8 +36,8 @@ class Oatmeal < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.1/oatmeal_0.12.1_linux_arm64.tar.gz"
-      sha256 "ce8ad77cd11be9924da313a30efd3d6e49a02b9b82c4c902d01cefdafc53238a"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.2/oatmeal_0.12.2_linux_arm64.tar.gz"
+      sha256 "57f0e85d5648ba19b9a661d44e63b93d92799efdce5bef5e175c4b6d207f5d03"
 
       def install
         bin.install "oatmeal"
@@ -48,8 +48,8 @@ class Oatmeal < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.1/oatmeal_0.12.1_linux_amd64.tar.gz"
-      sha256 "68a748cec7e9dfe2f430efd1cb8cbe9c1030548ba90034b856c25b02deb18d74"
+      url "https://github.com/dustinblackman/oatmeal/releases/download/v0.12.2/oatmeal_0.12.2_linux_amd64.tar.gz"
+      sha256 "9c19c193c902b77a105c312e744add587440937ca5e5fe66e4c64e79d2b7c8dc"
 
       def install
         bin.install "oatmeal"
